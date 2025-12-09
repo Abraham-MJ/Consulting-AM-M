@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header
+      id="header"
+      class="fixed top-0 left-0 w-full text-white z-50 transition-all duration-300"
+    >
+      <nav
+        class="container mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center space-x-3">
+          <img
+            src="assets/images/logo.png"
+            alt="Tus Asesores LLC"
+            class="h-12"
+          />
+        </div>
+
+        <ul id="menu" class="hidden lg:flex items-center space-x-8 text-sm">
+          <li>
+            <a
+              href="#inicio"
+              class="hover:text-yellow-400 transition font-semibold"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a
+              href="#sobre-nosotros"
+              class="hover:text-yellow-400 transition font-semibold"
+              >Sobre Nosotros</a
+            >
+          </li>
+          <li>
+            <a
+              href="#servicios"
+              class="hover:text-yellow-400 transition font-semibold"
+              >Servicios</a
+            >
+          </li>
+          <li>
+            <a
+              href="#recursos"
+              class="hover:text-yellow-400 transition font-semibold"
+              >Recursos</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contacto"
+              class="hover:text-yellow-400 transition font-semibold"
+              >Contacto</a
+            >
+          </li>
+          <li>
+            <button
+              class="bg-yellow-500 text-black px-6 py-2 rounded font-semibold hover:bg-yellow-400 transition uppercase text-sm"
+            >
+              Regístrate
+            </button>
+          </li>
+        </ul>
+
+        <button id="menuToggle" class="lg:hidden text-2xl">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+
+      <div
+        id="mobileMenuOverlay"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm lg:hidden z-40 transition-opacity duration-300"
+      ></div>
+
+      <div
+        id="mobileMenu"
+        class="fixed top-0 right-0 h-full w-80 bg-gradient-to-b from-gray-900 via-black to-blue-900 lg:hidden transform translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-2xl"
+      >
+        <div class="flex flex-col h-full">
+          <div
+            class="flex items-center justify-between p-6 border-b border-gray-700"
+          >
+            <img src="assets/images/logo.png" alt="Logo" class="h-10" />
+            <button
+              id="menuClose"
+              class="text-white text-2xl hover:text-yellow-400 transition"
+            >
+              <i class="fa-solid fa-times"></i>
+            </button>
+          </div>
+
+          <ul
+            class="flex flex-col space-y-2 px-6 py-8 flex-grow overflow-y-auto"
+          >
+            <li class="menu-item opacity-0">
+              <a
+                href="#inicio"
+                class="block py-3 px-4 hover:bg-yellow-500 hover:text-black rounded transition-all duration-300 transform hover:translate-x-2"
+              >
+                <i class="fa-solid fa-home mr-3"></i>Inicio
+              </a>
+            </li>
+            <li class="menu-item opacity-0">
+              <a
+                href="#sobre-nosotros"
+                class="block py-3 px-4 hover:bg-yellow-500 hover:text-black rounded transition-all duration-300 transform hover:translate-x-2"
+              >
+                <i class="fa-solid fa-users mr-3"></i>Sobre Nosotros
+              </a>
+            </li>
+            <li class="menu-item opacity-0">
+              <a
+                href="#servicios"
+                class="block py-3 px-4 hover:bg-yellow-500 hover:text-black rounded transition-all duration-300 transform hover:translate-x-2"
+              >
+                <i class="fa-solid fa-briefcase mr-3"></i>Servicios
+              </a>
+            </li>
+            <li class="menu-item opacity-0">
+              <a
+                href="#recursos"
+                class="block py-3 px-4 hover:bg-yellow-500 hover:text-black rounded transition-all duration-300 transform hover:translate-x-2"
+              >
+                <i class="fa-solid fa-book mr-3"></i>Recursos
+              </a>
+            </li>
+            <li class="menu-item opacity-0">
+              <a
+                href="#contacto"
+                class="block py-3 px-4 hover:bg-yellow-500 hover:text-black rounded transition-all duration-300 transform hover:translate-x-2"
+              >
+                <i class="fa-solid fa-envelope mr-3"></i>Contacto
+              </a>
+            </li>
+            <li class="menu-item opacity-0 pt-4">
+              <button
+                class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition w-full uppercase shadow-lg"
+              >
+                Regístrate
+              </button>
+            </li>
+          </ul>
+
+          <div class="p-6 border-t border-gray-700">
+            <p class="text-wgite text-sm mb-3">Síguenos</p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-white hover:text-yellow-400 transition text-xl"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white hover:text-yellow-400 transition text-xl"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white hover:text-yellow-400 transition text-xl"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white hover:text-yellow-400 transition text-xl"
+              >
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section
+      id="inicio"
+      class="hero-section relative h-screen flex items-center justify-center text-center overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('assets/images/hero-background.jpg')"
+      ></div>
+      <div class="absolute inset-0 hero-overlay"></div>
+
+      <div class="relative z-10 px-6 max-w-5xl hero-content">
+        <h1
+          class="hero-title text-5xl md:text-7xl font-bold mb-6 leading-tight"
+        >
+          Tu LLC en <span class="text-yellow-300">EE.UU.</span>
+          Bajo control, desde cualquier país
+        </h1>
+        <p class="hero-subtitle text-white text-lg md:text-2xl mb-8 opacity-90">
+          Aseguramos el cumplimiento fiscal de tu empresa en EE.UU. para que te
+          dediques a su crecimiento. Asesoría 100% online.
+        </p>
+      </div>
+
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <i class="fa-solid fa-arrow-down text-gradient text-2xl"></i>
+      </div>
+    </section>
+
+    <section class="bg-black py-16 md:py-24 overflow-hidden">
+      <div
+        class="w-full h-1 bg-gradient-to-r from-transparent via-yellow-600 to-transparent mb-16 animate-pulse-line"
+      ></div>
+
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12 fade-in-section">
+          <h2 class="text-white text-4xl md:text-5xl font-bold mb-4">
+            Conoce Cómo <span class="text-yellow-400">Trabajamos</span>
+          </h2>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+            Descubre nuestra metodología y cómo ayudamos a empresas como la tuya
+            a crecer en Estados Unidos
+          </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto fade-in-section">
+          <video class="w-full rounded-lg shadow-2xl" controls>
+            <source src="assets/video-home.mp4" type="video/mp4" />
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+      </div>
+
+      <div
+        class="w-full h-1 bg-gradient-to-r from-transparent via-yellow-600 to-transparent mt-16 animate-pulse-line"
+      ></div>
+    </section>
+
+    <!-- <section id="servicios" class="bg-gradient-to-b from-gray-900 via-black to-black py-16 md:py-24">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16 fade-in-section">
+          <h2 class="text-white text-4xl md:text-5xl font-bold mb-4">
+            Nuestros <span class="text-yellow-400">Servicios</span>
+          </h2>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+            Soluciones integrales para el éxito de tu empresa en Estados Unidos
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div class="service-card group relative bg-white p-8 rounded-xl transition-all duration-300 fade-in-section">
+            <div class="absolute top-4 right-4 text-6xl font-bold text-yellow-400 opacity-10">01</div>
+            <div class="relative">
+              <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="fa-solid fa-chart-line text-2xl text-black"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Asesoría Fiscal Estratégica
+              </h3>
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Te ayudamos a estructurar tu negocio para optimizar tu carga tributaria y maximizar beneficios.
+              </p>
+              <button class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition-all duration-300">
+                Ver más <i class="fa-solid fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="service-card group relative bg-white p-8 rounded-xl transition-all duration-300 fade-in-section">
+            <div class="absolute top-4 right-4 text-6xl font-bold text-yellow-400 opacity-10">02</div>
+            <div class="relative">
+              <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="fa-solid fa-calculator text-2xl text-black"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Contabilidad Mensual y Anual
+              </h3>
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Llevamos tus libros al día para que tengas control total de tus finanzas y tomes decisiones inteligentes.
+              </p>
+              <button class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition-all duration-300">
+                Ver más <i class="fa-solid fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="service-card group relative bg-white p-8 rounded-xl transition-all duration-300 fade-in-section">
+            <div class="absolute top-4 right-4 text-6xl font-bold text-yellow-400 opacity-10">03</div>
+            <div class="relative">
+              <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="fa-solid fa-file-invoice-dollar text-2xl text-black"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Declaración de Impuestos (No Residentes)
+              </h3>
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Preparamos y presentamos tus declaraciones (Form. 1120, 5472 - 1065 - 1040NR) para asegurar tu cumplimiento con el IRS.
+              </p>
+              <button class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition-all duration-300">
+                Ver más <i class="fa-solid fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="service-card group relative bg-white p-8 rounded-xl transition-all duration-300 fade-in-section">
+            <div class="absolute top-4 right-4 text-6xl font-bold text-yellow-400 opacity-10">04</div>
+            <div class="relative">
+              <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <i class="fa-solid fa-building text-2xl text-black"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Creación de LLC para Extranjeros
+              </h3>
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Registramos tu empresa en EE.UU. de forma 100% remota para que empieces a operar sin complicaciones.
+              </p>
+              <button class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition-all duration-300">
+                Ver más <i class="fa-solid fa-arrow-right ml-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section
+      id="sobre-nosotros"
+      class="relative bg-gradient-to-br from-black via-black to-yellow-900 py-24 md:py-32 overflow-hidden"
+    >
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center fade-in-section">
+          <h2 class="text-yellow-400 text-5xl md:text-6xl font-bold mb-8">
+            Sobre Nosotros
+          </h2>
+          <div class="w-24 h-1 bg-yellow-400 mx-auto mb-12"></div>
+
+          <p class="text-white text-xl md:text-2xl mb-8 leading-relaxed">
+            Somos tu socio estratégico para la gestión contable, fiscal y
+            financiera de tu empresa en Estados Unidos.
+          </p>
+
+          <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+            Sabemos los desafíos que enfrentas, desde el desconocimiento
+            contable hasta la necesidad de cumplir con la ley y proteger tu
+            capital de la inflación.
+          </p>
+
+          <p class="text-gray-300 text-lg mb-12 leading-relaxed">
+            Por eso, brindamos asesoría y herramientas efectivas para que tu
+            administración sea transparente, evites multas y logres un
+            crecimiento financiero sólido. Con nosotros, tu información siempre
+            estará al día, permitiéndote concentrarte en tus metas
+            empresariales.
+          </p>
+
+          <button
+            class="bg-yellow-500 text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition-all duration-300 hover:scale-105 shadow-xl"
+          >
+            Conocer Más <i class="fa-solid fa-arrow-right ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section
+      class="bg-gradient-to-b from-yellow-700 via-yellow-600 to-yellow-700 py-16 md:py-24"
+    >
+      <div class="container mx-auto px-6">
+        <h2 class="text-white text-4xl md:text-5xl font-bold text-center mb-12">
+          Testimonios
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <img src="assets/images/logo.png" alt="Logo" class="h-8 mr-3" />
+              <h3 class="font-bold text-lg">Patricia Rodriguez</h3>
+            </div>
+            <p class="text-gray-800 text-sm text-justify leading-relaxed">
+              Manejar la contabilidad y los taxes de mi empresa en EE.UU con
+              ustedes, no solo tengo la tranquilidad de estar 100% en
+              cumplimiento, sino que su asesoría financiera me ha permitido
+              proteger mi dinero de la inflación y tomar decisiones mucho más
+              inteligentes. ¡Su servicio y su claridad son invaluables!
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <img src="assets/images/logo.png" alt="Logo" class="h-8 mr-3" />
+              <h3 class="font-bold text-lg">Daniel Montes</h3>
+            </div>
+            <p class="text-gray-800 text-sm text-justify leading-relaxed">
+              La preparación de taxes en EE.UU. me generaba mucho estrés,
+              especialmente por el desconocimiento. Tus Asesores no solo
+              gestionaron mis impuestos de manera impecable, sino que también me
+              brindaron asesoría financiera práctica para entender cómo
+              optimizar mis recursos. Su compromiso es excepcional y me siento
+              realmente respaldado!
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <img src="assets/images/logo.png" alt="Logo" class="h-8 mr-3" />
+              <h3 class="font-bold text-lg">Carlos Perdomo</h3>
+            </div>
+            <p class="text-gray-800 text-sm text-justify leading-relaxed">
+              Necesitaba un socio confiable para las finanzas de mi empresa y la
+              asesoría contable, Y ustedes superaron mis expectativas. Su equipo
+              es transparente, eficiente y siempre está al tanto de las últimas
+              regulaciones de taxes. Gracias a ello, mi negocio está creciendo
+              de forma sostenible y con una base financiera sólida.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- <footer class="bg-yellow-600 text-black py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="flex justify-center md:justify-start">
+                    <img src="assets/images/logo.png" alt="Tus Asesores LLC" class="h-32">
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Servicios</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Contabilidad</li>
+                        <li>• Taxes</li>
+                        <li>• Nueva Empresa en USA</li>
+                        <li>• Asesoría Financiera</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-4">De interés</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>• Quiénes Somos</li>
+                        <li>• Cursos y Recursos</li>
+                        <li>• Boletín Semanal</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Contacto</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>• info@tusasesoresllc.com</li>
+                        <li>• +1 (305) 985-4905</li>
+                        <li>• Agenda una consulta</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="#" class="bg-black text-yellow-500 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition">
+                    <span class="text-xl">▶</span>
+                </a>
+                <a href="#" class="bg-black text-yellow-500 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition">
+                    <span class="text-xl font-bold">f</span>
+                </a>
+                <a href="#" class="bg-black text-yellow-500 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition">
+                    <span class="text-xl">📷</span>
+                </a>
+                <a href="#" class="bg-black text-yellow-500 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition">
+                    <span class="text-xl font-bold">in</span>
+                </a>
+                <a href="#" class="bg-black text-yellow-500 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition">
+                    <span class="text-xl">♪</span>
+                </a>
+                <a href="#" class="bg-black text-yellow-500 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-800 transition">
+                    <span class="text-xl">💬</span>
+                </a>
+            </div>
+
+            <div class="text-center text-sm">
+                <p>© 2025 Tus Asesores, LLC. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>  -->
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
