@@ -179,6 +179,8 @@ function initTestimonialSlider() {
 
 // Wait for components to load before initializing
 function initializeApp() {
+  console.log('Starting app initialization...');
+  
   // Header scroll effect (can initialize immediately)
   const header = document.getElementById("header");
   if (header) {
@@ -191,22 +193,35 @@ function initializeApp() {
         header.classList.add("shadow-md");
       }
     });
+    console.log('Header scroll effect initialized');
+  } else {
+    console.log('Header not found, skipping scroll effect');
   }
 
   // Wait for DOM elements to be available
   setTimeout(() => {
-    // Generate testimonials
-    generateTestimonials();
+    try {
+      // Generate testimonials
+      generateTestimonials();
 
-    // Initialize testimonial slider
-    initTestimonialSlider();
+      // Initialize testimonial slider
+      initTestimonialSlider();
 
-    // Initialize smooth scroll and active nav
-    initSmoothScroll();
-    updateActiveNavItem();
+      // Initialize smooth scroll and active nav
+      initSmoothScroll();
+      updateActiveNavItem();
 
-    // Scroll animations
-    initScrollAnimations();
+      // Scroll animations
+      initScrollAnimations();
+
+      // Mobile menu
+      initMobileMenu();
+
+      console.log('App initialized successfully');
+    } catch (error) {
+      console.error('Error during initialization:', error);
+    }
+  }, 500);
 
     // Mobile menu
     initMobileMenu();

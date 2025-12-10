@@ -60,12 +60,15 @@ document.addEventListener('DOMContentLoaded', async function() {
 function initializeScripts() {
     console.log('Initializing scripts...');
     
-    // Call the main app initialization function
-    if (typeof window.initializeApp === 'function') {
-        window.initializeApp();
-    } else {
-        console.error('initializeApp function not found');
-    }
+    // Wait a bit more for DOM elements to be fully available
+    setTimeout(() => {
+        // Call the main app initialization function
+        if (typeof window.initializeApp === 'function') {
+            window.initializeApp();
+        } else {
+            console.error('initializeApp function not found');
+        }
+    }, 300);
     
     console.log('Scripts initialized');
 }
