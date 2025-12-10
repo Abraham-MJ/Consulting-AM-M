@@ -85,7 +85,27 @@ body {
     transform: scale(0.95);
 }
 
-/* Mobile Menu Styles */
+/* Header Styles */
+.nav-link:hover {
+    color: #171A73 !important;
+}
+
+.mobile-nav-link:hover {
+    background-color: rgba(23, 26, 115, 0.1) !important;
+    color: #171A73 !important;
+}
+
+#menuToggle:hover {
+    color: #171A73 !important;
+}
+
+#menuClose:hover {
+    color: #171A73 !important;
+}
+
+.flex.space-x-4 a:hover {
+    color: #171A73 !important;
+}
 .menu-item {
     transition: opacity 0.3s ease, transform 0.3s ease;
     transform: translateX(20px);
@@ -120,5 +140,154 @@ body {
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Floating Circles Animations */
+@keyframes float-slow {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    25% {
+        transform: translateY(-10px) translateX(5px);
+    }
+    50% {
+        transform: translateY(-5px) translateX(-8px);
+    }
+    75% {
+        transform: translateY(-15px) translateX(3px);
+    }
+}
+
+@keyframes float-reverse {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    25% {
+        transform: translateY(10px) translateX(-5px);
+    }
+    50% {
+        transform: translateY(5px) translateX(8px);
+    }
+    75% {
+        transform: translateY(15px) translateX(-3px);
+    }
+}
+
+.animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+    animation: float-reverse 10s ease-in-out infinite;
+}
+
+.animate-float-slow-delay {
+    animation: float-slow 12s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+.animate-float-reverse-delay {
+    animation: float-reverse 9s ease-in-out infinite;
+    animation-delay: -4s;
+}
+
+/* Photo Frames for About Section - Improved */
+.photo-frame-primary {
+    border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%;
+    position: relative;
+    transform: rotate(-8deg);
+    transition: all 0.4s ease;
+    box-shadow: 
+        0 0 0 6px #C4AD0F,
+        0 0 0 12px rgba(196, 173, 15, 0.3),
+        0 20px 40px rgba(23, 26, 115, 0.2),
+        0 40px 80px rgba(0, 0, 0, 0.1);
+}
+
+.photo-frame-primary:hover {
+    transform: rotate(-5deg) scale(1.05) translateY(-5px);
+    box-shadow: 
+        0 0 0 6px #C4AD0F,
+        0 0 0 12px rgba(196, 173, 15, 0.5),
+        0 30px 60px rgba(23, 26, 115, 0.3),
+        0 60px 120px rgba(0, 0, 0, 0.15);
+}
+
+.photo-frame-secondary {
+    border-radius: 35% 65% 70% 30% / 40% 60% 40% 60%;
+    position: relative;
+    transform: rotate(12deg);
+    transition: all 0.4s ease;
+    box-shadow: 
+        0 0 0 5px #171A73,
+        0 0 0 10px rgba(23, 26, 115, 0.3),
+        0 15px 30px rgba(196, 173, 15, 0.2),
+        0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+.photo-frame-secondary:hover {
+    transform: rotate(8deg) scale(1.05) translateY(-5px);
+    box-shadow: 
+        0 0 0 5px #171A73,
+        0 0 0 10px rgba(23, 26, 115, 0.5),
+        0 25px 50px rgba(196, 173, 15, 0.3),
+        0 50px 100px rgba(0, 0, 0, 0.15);
+}
+
+.decorative-element {
+    background: linear-gradient(135deg, rgba(23, 26, 115, 0.1), rgba(196, 173, 15, 0.1));
+    border-radius: 50% 20% 80% 30%;
+    transform: rotate(45deg);
+    animation: float-slow 15s ease-in-out infinite;
+}
+
+.photo-frame-primary::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border-radius: inherit;
+    background: linear-gradient(45deg, 
+        rgba(196, 173, 15, 0.1) 0%, 
+        rgba(23, 26, 115, 0.1) 50%, 
+        rgba(196, 173, 15, 0.1) 100%);
+    z-index: -1;
+    animation: rotate 20s linear infinite;
+}
+
+.photo-frame-secondary::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border-radius: inherit;
+    background: linear-gradient(-45deg, 
+        rgba(23, 26, 115, 0.1) 0%, 
+        rgba(196, 173, 15, 0.1) 50%, 
+        rgba(23, 26, 115, 0.1) 100%);
+    z-index: -1;
+    animation: rotate 25s linear infinite reverse;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Organic Shapes for About Section */
+.organic-shape-1 {
+    border-radius: 73% 27% 83% 17% / 72% 89% 11% 28%;
+    opacity: 0.9;
+    transform: rotate(-15deg);
+}
+
+.organic-shape-2 {
+    border-radius: 48% 52% 30% 70% / 63% 42% 58% 37%;
+    opacity: 0.9;
+    transform: rotate(25deg);
 }
 
